@@ -29,6 +29,12 @@ class QuizVC: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.titleView?.tintColor = UIColor(named: "white")
         
+        questionLabel.font = UIFont(name: "BarlowSemiCondensed-Medium.ttf", size: 21)
+        
+        
+        
+        
+        
         let urlString =  "https://opentdb.com/api.php?amount=10&token=77f7908d9675e4b332dcdbaa38d4d827a4690806dfb2b4cbed460202dc2a7914"
     
         if let url = URL(string: urlString){
@@ -39,7 +45,7 @@ class QuizVC: UIViewController {
                     return
                 }
                 guard let data = data else{
-                    print("veri yok")
+                    print("no data")
                     return
                 }
                 do{
@@ -50,10 +56,10 @@ class QuizVC: UIViewController {
                             self.showQuestion()
                         }
                     }else{
-                        print("geçersiz json")
+                        print("invalid json")
                     }
                 }catch{
-                    print("son: \(error.localizedDescription)")
+                    print("error: \(error.localizedDescription)")
                 }
             }
             task.resume()
@@ -77,7 +83,7 @@ class QuizVC: UIViewController {
             if let incorrectAnswers = currentQuestion["incorrect_answers"] as? [String] {
                 options += incorrectAnswers
             }
-            options.shuffle() // Rastgele sırala
+            options.shuffle()
             
             if options.count >= 4 {
                 button1.setTitle(options[0], for: .normal)
@@ -86,10 +92,10 @@ class QuizVC: UIViewController {
                 button4.setTitle(options[3], for: .normal)
             }
         } else {
-            print("Sorular bitti")
+            print("Questions over")
             self.performSegue(withIdentifier: "sonucEkraniGecis", sender: (correctAnswers,incorrectAnswers))
-            print("doğru: \(correctAnswers)")
-            print("yanlış: \(incorrectAnswers)")
+            print("correct: \(correctAnswers)")
+            print("incorrect: \(incorrectAnswers)")
         }
     }
  
@@ -119,19 +125,17 @@ class QuizVC: UIViewController {
             let currentQuestion = questions[currentQuestionIndex]
             if let correctAnswer = currentQuestion["correct_answer"] as? String {
                 if selectedAnswer == correctAnswer {
-                    print("Doğru cevap!")
-                    // Burada doğru cevaba göre yapılacak işlemler eklenebilir
-                    scheduleNotification(title: "Doğru Cevap!", body: "Tebrikler, doğru cevapladınız!")
+                    print("Correct answer!")
+                    scheduleNotification(title: "Doğru Cevap!", body: "Congratulations, you answered correctly!")
                     correctAnswers += 1
                 } else {
-                    print("Yanlış cevap!")
-                    // Burada yanlış cevaba göre yapılacak işlemler eklenebilir
-                    scheduleNotification(title: "Yanlış Cevap!", body: "Üzgünüz, yanlış cevapladınız!")
+                    print("Wrong answer!")
+                    scheduleNotification(title: "Yanlış Cevap!", body: "Sorry, you answered wrong!")
                     incorrectAnswers += 1
                 }
             }
             
-            // Sonraki soruya geç
+           
             currentQuestionIndex += 1
             showQuestion()
 
@@ -150,10 +154,10 @@ class QuizVC: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("prepare çalıştı")
+        print("prepare worked")
         
         if segue.identifier == "sonucEkraniGecis" {
-            print("sonucEkraniGecis çalıştı")
+            print("sonucEkraniGecis worked")
             
             if let ResultVC = segue.destination as? ResultVC {
                

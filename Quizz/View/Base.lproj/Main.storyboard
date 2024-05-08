@@ -42,8 +42,20 @@
                                     <segue destination="eu1-C3-Q0Q" kind="show" id="ZxU-fW-wZ9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDI-66-ehh">
+                                <rect key="frame" x="16" y="68" width="210" height="44.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="37"/>
+                                <color key="textColor" name="FontColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quizz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zya-M8-8nU">
+                                <rect key="frame" x="16" y="90" width="214" height="95.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="80"/>
+                                <color key="textColor" name="FontColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7A-g6-pVD">
-                                <rect key="frame" x="142.66666666666666" y="479" width="108" height="56"/>
+                                <rect key="frame" x="143" y="479" width="107.33333333333331" height="56"/>
                                 <color key="backgroundColor" name="Color1"/>
                                 <color key="tintColor" name="FontColor"/>
                                 <state key="normal" title="Button"/>
@@ -54,18 +66,6 @@
                                     <segue destination="Uc1-VQ-NCa" kind="show" id="T26-dP-NFJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDI-66-ehh">
-                                <rect key="frame" x="16" y="68" width="202" height="44.333333333333343"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
-                                <color key="textColor" name="FontColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quizz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zya-M8-8nU">
-                                <rect key="frame" x="16" y="90" width="206.33333333333334" height="95.666666666666686"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
-                                <color key="textColor" name="FontColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -88,6 +88,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qzt-Se-fY8"/>
+                    <connections>
+                        <outlet property="QuizzTitleLabel" destination="Zya-M8-8nU" id="qKN-65-LBb"/>
+                        <outlet property="WelcomeToLabel" destination="bDI-66-ehh" id="xAG-EI-NCA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -153,8 +157,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="NTB-ze-etv"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="QuizzTitleLabel" destination="fwI-cQ-Pda" id="O9w-A5-YYq"/>
                         <outlet property="emailTextField" destination="hZi-92-9wd" id="7eE-ue-pJI"/>
-                        <outlet property="parolaTextField" destination="AhY-HL-Qed" id="IJh-BT-Dcr"/>
+                        <outlet property="passwordTextField" destination="AhY-HL-Qed" id="IJh-BT-Dcr"/>
                         <segue destination="eu1-C3-Q0Q" kind="show" identifier="goToNext" id="JVL-FN-WhR"/>
                     </connections>
                 </viewController>
@@ -176,7 +181,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJy-8N-fB9">
                                 <rect key="frame" x="16" y="30" width="361" height="412"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -275,20 +280,8 @@
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdG-86-Q9D">
-                                <rect key="frame" x="134" y="549" width="125" height="56"/>
-                                <color key="backgroundColor" name="Color1"/>
-                                <color key="tintColor" name="FontColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="VIDEO">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="videoButton:" destination="vXj-73-DYp" eventType="touchUpInside" id="nDl-Wy-h7c"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check out your video based on your score!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cx-d0-DXl">
-                                <rect key="frame" x="30" y="359.66666666666669" width="333" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check out your video based on your score!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cx-d0-DXl">
+                                <rect key="frame" x="30" y="329.66666666666669" width="333" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="FontColor"/>
                                 <nil key="highlightedColor"/>
@@ -305,13 +298,24 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="2gc-7q-9C6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdG-86-Q9D">
+                                <rect key="frame" x="134" y="585" width="125" height="56"/>
+                                <color key="backgroundColor" name="Color1"/>
+                                <color key="tintColor" name="FontColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="VIDEO">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="videoButton:" destination="vXj-73-DYp" eventType="touchUpInside" id="nDl-Wy-h7c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6CC-Fr-K56"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6CC-Fr-K56" firstAttribute="trailing" secondItem="0Cx-d0-DXl" secondAttribute="trailing" constant="30" id="06v-9r-Dxw"/>
                             <constraint firstItem="VUA-NN-5iB" firstAttribute="centerX" secondItem="NC4-gB-U4H" secondAttribute="centerX" id="3XQ-td-ijj"/>
-                            <constraint firstItem="gdG-86-Q9D" firstAttribute="leading" secondItem="6CC-Fr-K56" secondAttribute="leading" constant="134" id="5fr-if-na7"/>
                             <constraint firstItem="6CC-Fr-K56" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nc1-ED-8NH" secondAttribute="trailing" id="6Js-rZ-hck"/>
                             <constraint firstAttribute="bottomMargin" secondItem="XxZ-59-UCi" secondAttribute="bottom" constant="-34" id="8Mv-BO-bIQ"/>
                             <constraint firstItem="6CC-Fr-K56" firstAttribute="bottom" secondItem="gdG-86-Q9D" secondAttribute="bottom" constant="237" id="9F8-f6-eFH"/>
@@ -327,13 +331,15 @@
                             <constraint firstItem="gdG-86-Q9D" firstAttribute="centerX" secondItem="NC4-gB-U4H" secondAttribute="centerX" id="bRc-sj-hjI"/>
                             <constraint firstItem="A5c-5V-Ho2" firstAttribute="leading" secondItem="6CC-Fr-K56" secondAttribute="leading" constant="40" id="gEe-Vr-Rze"/>
                             <constraint firstItem="6CC-Fr-K56" firstAttribute="trailing" secondItem="A5c-5V-Ho2" secondAttribute="trailing" constant="40" id="oTL-S6-SnN"/>
-                            <constraint firstItem="0Cx-d0-DXl" firstAttribute="top" secondItem="A5c-5V-Ho2" secondAttribute="bottom" constant="190" id="rum-5L-Um7"/>
+                            <constraint firstItem="0Cx-d0-DXl" firstAttribute="top" secondItem="A5c-5V-Ho2" secondAttribute="bottom" constant="160" id="rum-5L-Um7"/>
                             <constraint firstItem="0Cx-d0-DXl" firstAttribute="leading" secondItem="6CC-Fr-K56" secondAttribute="leading" constant="30" id="yRz-RV-oYk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cbs-rn-qu9"/>
                     <connections>
+                        <outlet property="checkVideoLabel" destination="0Cx-d0-DXl" id="wD5-Wc-Pcf"/>
                         <outlet property="scoreLabel" destination="A5c-5V-Ho2" id="J8c-SH-5Vn"/>
+                        <outlet property="yourScoreLabel" destination="nc1-ED-8NH" id="Tqi-CN-An9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tty-it-xEI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -400,6 +406,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="MXM-kU-Px1"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="QuizzTitleLabel" destination="4ZW-Oh-vVK" id="i4e-fj-tIn"/>
                         <outlet property="emailTextField" destination="ZcZ-by-cbs" id="skS-pb-yhK"/>
                         <outlet property="passwordTextField" destination="6oV-6I-Cna" id="a6h-66-sWr"/>
                         <segue destination="eu1-C3-Q0Q" kind="show" identifier="goToNext" id="P21-4f-cP1"/>
@@ -429,6 +436,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="sUK-Wt-qSL"/>
         <segue reference="ZxU-fW-wZ9"/>
         <segue reference="2gc-7q-9C6"/>
     </inferredMetricsTieBreakers>
@@ -436,10 +444,10 @@
     <resources>
         <image name="4" width="540" height="720"/>
         <namedColor name="Color1">
-            <color red="0.96470588235294119" green="0.59607843137254901" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9649999737739563" green="0.59600001573562622" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="FontColor">
-            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

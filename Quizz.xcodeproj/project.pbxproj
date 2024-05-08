@@ -33,6 +33,11 @@
 		E4DD97952BEB0E16009C004C /* 3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4DD978B2BEB0E16009C004C /* 3.mp4 */; };
 		E4DD97962BEB0E16009C004C /* 5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4DD978C2BEB0E16009C004C /* 5.mp4 */; };
 		E4DD97982BEB2655009C004C /* 0.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4DD97972BEB2655009C004C /* 0.mp4 */; };
+		E4DD979E2BEB2DDC009C004C /* SedanSC-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4DD979D2BEB2DDC009C004C /* SedanSC-Regular.ttf */; };
+		E4DD97A22BEB33C9009C004C /* Jaro-Regular-VariableFont_opsz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4DD97A12BEB33C9009C004C /* Jaro-Regular-VariableFont_opsz.ttf */; };
+		E4DD97A42BEB3593009C004C /* BarlowSemiCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4DD97A32BEB3593009C004C /* BarlowSemiCondensed-Black.ttf */; };
+		E4DD97A62BEB3626009C004C /* BarlowSemiCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4DD97A52BEB3626009C004C /* BarlowSemiCondensed-Medium.ttf */; };
+		E4DD97A82BEB36B4009C004C /* BarlowSemiCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E4DD97A72BEB36B4009C004C /* BarlowSemiCondensed-Regular.ttf */; };
 		E4FA965A2BE9A98000281EDE /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FA96592BE9A98000281EDE /* QuestionData.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +88,11 @@
 		E4DD978B2BEB0E16009C004C /* 3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.mp4; sourceTree = "<group>"; };
 		E4DD978C2BEB0E16009C004C /* 5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.mp4; sourceTree = "<group>"; };
 		E4DD97972BEB2655009C004C /* 0.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 0.mp4; sourceTree = "<group>"; };
+		E4DD979D2BEB2DDC009C004C /* SedanSC-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SedanSC-Regular.ttf"; sourceTree = "<group>"; };
+		E4DD97A12BEB33C9009C004C /* Jaro-Regular-VariableFont_opsz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jaro-Regular-VariableFont_opsz.ttf"; sourceTree = "<group>"; };
+		E4DD97A32BEB3593009C004C /* BarlowSemiCondensed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Black.ttf"; sourceTree = "<group>"; };
+		E4DD97A52BEB3626009C004C /* BarlowSemiCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Medium.ttf"; sourceTree = "<group>"; };
+		E4DD97A72BEB36B4009C004C /* BarlowSemiCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowSemiCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		E4FA96592BE9A98000281EDE /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +146,7 @@
 		E4233E9A2BE58310004907C2 /* Quizz */ = {
 			isa = PBXGroup;
 			children = (
+				E4DD979C2BEB2CC9009C004C /* Fonts */,
 				E4DD979B2BEB2A0E009C004C /* Controller */,
 				E4DD979A2BEB2A05009C004C /* View */,
 				E4DD97992BEB29F9009C004C /* Model */,
@@ -218,6 +229,18 @@
 			children = (
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E4DD979C2BEB2CC9009C004C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E4DD97A72BEB36B4009C004C /* BarlowSemiCondensed-Regular.ttf */,
+				E4DD979D2BEB2DDC009C004C /* SedanSC-Regular.ttf */,
+				E4DD97A12BEB33C9009C004C /* Jaro-Regular-VariableFont_opsz.ttf */,
+				E4DD97A32BEB3593009C004C /* BarlowSemiCondensed-Black.ttf */,
+				E4DD97A52BEB3626009C004C /* BarlowSemiCondensed-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,12 +362,17 @@
 				E4DD97952BEB0E16009C004C /* 3.mp4 in Resources */,
 				E4DD978D2BEB0E16009C004C /* 4.mp4 in Resources */,
 				E4233ED82BE59C1E004907C2 /* GoogleService-Info.plist in Resources */,
+				E4DD97A42BEB3593009C004C /* BarlowSemiCondensed-Black.ttf in Resources */,
+				E4DD97A82BEB36B4009C004C /* BarlowSemiCondensed-Regular.ttf in Resources */,
 				E4DD97982BEB2655009C004C /* 0.mp4 in Resources */,
 				E4DD97902BEB0E16009C004C /* 8.mp4 in Resources */,
 				E4DD978E2BEB0E16009C004C /* 7.mp4 in Resources */,
 				E4233EA82BE58311004907C2 /* Base in Resources */,
 				E4DD97942BEB0E16009C004C /* 10.mp4 in Resources */,
 				E4233EA32BE58310004907C2 /* Base in Resources */,
+				E4DD979E2BEB2DDC009C004C /* SedanSC-Regular.ttf in Resources */,
+				E4DD97A22BEB33C9009C004C /* Jaro-Regular-VariableFont_opsz.ttf in Resources */,
+				E4DD97A62BEB3626009C004C /* BarlowSemiCondensed-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,8 +14,9 @@ class ResultVC: UIViewController {
     var correctAnswers: Int = 0
     var incorrectAnswers: Int = 0
     
+    @IBOutlet weak var yourScoreLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    
+    @IBOutlet weak var checkVideoLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +29,10 @@ class ResultVC: UIViewController {
         scoreLabel.text = "\(correctAnswers)/\(incorrectAnswers+correctAnswers)"
         
                 
+
+        checkVideoLabel.font = UIFont(name: "BarlowSemiCondensed-Medium", size: 20)
+        yourScoreLabel.font = UIFont(name: "BarlowSemiCondensed-Black", size: 50)
+        scoreLabel.font = UIFont(name: "BarlowSemiCondensed-Black", size: 70)
         
     }
     
@@ -39,7 +44,7 @@ class ResultVC: UIViewController {
     
     func playVideo(videoIndex: Int){
         guard let videoPath = Bundle.main.path(forResource: String(videoIndex), ofType: "mp4") else{
-            print("video dosyası bulunamadı")
+            print("video file not found")
             return
         }
         
@@ -49,7 +54,7 @@ class ResultVC: UIViewController {
         playerViewController.player = player
         
         guard let viewController = UIApplication.shared.windows.first?.rootViewController else {
-            print("view controller bulunamadı")
+            print("view controller not found")
             return
         }
         

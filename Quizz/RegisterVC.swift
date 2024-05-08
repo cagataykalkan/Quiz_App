@@ -13,6 +13,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var QuizzTitleLabel: UILabel!
     
     
     
@@ -23,6 +24,7 @@ class RegisterVC: UIViewController {
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "FontColor")]
         navigationController?.navigationBar.tintColor = UIColor(named: "FontColor")
+        QuizzTitleLabel.font = UIFont(name: "SedanSC-Regular", size: 70)
     }
     
     @IBAction func registerButton(_ sender: Any) {
@@ -38,22 +40,22 @@ class RegisterVC: UIViewController {
                 print(errorMessage)
                 
                 if errorMessage == "The email address is already in use by another account."{
-                    let alertController = UIAlertController(title: "Bu mail adresine kayıtlı hesap vardır", message: "Başka bir mail adresi ile deneyiniz veya giriş yapınız.", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "Tekrar Deneyiniz", style: .cancel)
+                    let alertController = UIAlertController(title: "There is an account registered to this email address", message: "Try or log in with a different email address.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Try again", style: .cancel)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true)
                 }
                 
                 if errorMessage == "The password must be 6 characters long or more."{
-                    let alertController = UIAlertController(title: "Yetersiz parola", message: "Parolanız minimum 6 karakter içermeli.", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "Tekrar Deneyiniz", style: .cancel)
+                    let alertController = UIAlertController(title: "Insufficient password", message: "Your password must contain at least 6 characters.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Try again", style: .cancel)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true)
                 }
                 
                 if errorMessage == "The email address is badly formatted."{
-                    let alertController = UIAlertController(title: "Hatalı email adresi", message: "Geçerli bir mail adresi giriniz.", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "Tekrar Deneyiniz", style: .cancel)
+                    let alertController = UIAlertController(title: "Incorrect email address", message: "Please enter a valid e-mail address.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Try again", style: .cancel)
                     alertController.addAction(alertAction)
                     self.present(alertController, animated: true)
                 }
