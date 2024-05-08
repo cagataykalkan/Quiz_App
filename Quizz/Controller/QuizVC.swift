@@ -35,7 +35,7 @@ class QuizVC: UIViewController {
         
         
         
-        let urlString =  "https://opentdb.com/api.php?amount=10&token=77f7908d9675e4b332dcdbaa38d4d827a4690806dfb2b4cbed460202dc2a7914"
+        let urlString =  "https://opentdb.com/api.php?amount=10&token=c90eae277bb3666234e4b1d190eed2c83f22198ab1885cb100caaac17047b8c9"
     
         if let url = URL(string: urlString){
             let session = URLSession.shared

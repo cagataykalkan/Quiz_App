@@ -11,6 +11,8 @@ import AVKit
 
 class ResultVC: UIViewController {
 
+    var model: ResultModel!
+
     var correctAnswers: Int = 0
     var incorrectAnswers: Int = 0
     
