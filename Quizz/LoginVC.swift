@@ -20,9 +20,13 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "FontColor")]
+        navigationController?.navigationBar.tintColor = UIColor(named: "FontColor")
+
     }
     
-    @IBAction func girisYapButton(_ sender: Any) {
+    @IBAction func loginButton(_ sender: Any) {
         
         guard let email = emailTextField.text else {return}
         guard let parola = parolaTextField.text else {return}

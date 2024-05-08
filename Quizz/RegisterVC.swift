@@ -11,22 +11,26 @@ import Firebase
 class RegisterVC: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
-
-    @IBOutlet weak var parolaTextField: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "FontColor")]
+        navigationController?.navigationBar.tintColor = UIColor(named: "FontColor")
     }
     
-    @IBAction func kayıtOlButton(_ sender: Any) {
+    @IBAction func registerButton(_ sender: Any) {
 
         guard let email = emailTextField.text else {return}
-        guard let parola = parolaTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
         
-        Auth.auth().createUser(withEmail: email, password: parola) { firebaseResault, error in
+        Auth.auth().createUser(withEmail: email, password: password) { firebaseResault, error in
             if let e = error{
                 
                 let errorMessage = e.localizedDescription

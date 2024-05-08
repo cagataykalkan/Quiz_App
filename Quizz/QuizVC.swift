@@ -87,7 +87,7 @@ class QuizVC: UIViewController {
             }
         } else {
             print("Sorular bitti")
-            self.performSegue(withIdentifier: "sonucEkraniGecis", sender: self )
+            self.performSegue(withIdentifier: "sonucEkraniGecis", sender: (correctAnswers,incorrectAnswers))
             print("doğru: \(correctAnswers)")
             print("yanlış: \(incorrectAnswers)")
         }
@@ -149,6 +149,19 @@ class QuizVC: UIViewController {
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("prepare çalıştı")
+        
+        if segue.identifier == "sonucEkraniGecis" {
+            print("sonucEkraniGecis çalıştı")
+            
+            if let ResultVC = segue.destination as? ResultVC {
+               
+                ResultVC.correctAnswers = correctAnswers
+                ResultVC.incorrectAnswers = incorrectAnswers
+            }
+            
+        }
+    }
 }
 
